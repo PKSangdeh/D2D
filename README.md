@@ -1,5 +1,5 @@
 # D2D
-Description
+Description:
 
    - This codes enables the D2D communication at cellular networks. The network has two subsystems, cellular network and D2D network.
      The cellular network includes a multi-antenna BS and multiple single-antenna CUEs. The D2D network includes two DUEs, each of 
