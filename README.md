@@ -50,29 +50,3 @@ Outputs of different codes:
 
    + Based on function of each code, a code may return EVM, synchornization result, freq. offset, constellation of decoded signal, 
      calibration coefficient, etc.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   +
-
-
