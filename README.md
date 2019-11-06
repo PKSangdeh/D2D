@@ -1,7 +1,10 @@
 # D2D
-Description:
+_this repo has the codes for concurrent D2D and NR cellular communications._
 
-   - This codes enables the D2D communication at cellular networks. The network has two subsystems, cellular network and D2D network.
+***1. Description:***
+
+   - This codes enables the D2D communication at cellular networks. The network has two subsystems, cellular network
+     and D2D network.
      The cellular network includes a multi-antenna BS and multiple single-antenna CUEs. The D2D network includes two DUEs, each of 
      which may have one or multiple-antennas. But, make sure there is enough DoF to cancell cross-network interference. For example,
      a BS with 4 antennas, 2 single-antenna CUEs, DUE1 with 2 antennas, and DUE2 with one antenna is a proper configuration. The D2D
@@ -9,7 +12,7 @@ Description:
      efficiency.
 
 
-PHY Type:
+***2. PHY Type:***
 
    - The Cellular network always uses 5G NR-like PHY with numerology mu=0 with 512 fft points, 15kHz subcarrier spacing, normal CP, 
      and 1ms/slot duration.
@@ -17,7 +20,7 @@ PHY Type:
      length, 4 pilot subcarriers, and 48 payload subcarriers.
 
 
-Procedure at high level:
+***3. Procedure at high level:***
 
    + Preliminary phase: BS and DUE1 performs calibration to calculate uplink/downlink channel mismatch and maintain reciprosity.
 
@@ -27,14 +30,14 @@ Procedure at high level:
                      Ideally, CUEs and DUE2 should not receive any interference and decode their data in regular manner.
 
 
-Functionality of some of the codes:
+***4. Functionality of some of the codes:***
 
    + Any code with _encode.m at the end will generate proper files to be transmitted for calibratio or data transmission
    + All codes having calib in their name are a part of calibration procedure.
    + PN_generator creates a preamble for time synchornization. It can be zadoff-chu or pseud-noise sequence.
    + Pattern_generator defines different DMRS pattern. It has many pre-defined pattern and also you can add your desired pattern.
 
-Purpose of stored .mat files:
+***5. Purpose of stored .mat files:***
 
    + pn stores the preamble
    + G_stack has the spatial filters for each subcarrier.
@@ -42,11 +45,11 @@ Purpose of stored .mat files:
    + D_calib and C_calib store the calibration coefficients for DUE1 and BS, respectively.
 
 
-Order of offine steps:
+***6. Order of offine steps:***
 
    + Calibration ----> Uplink ----> Uplink decoding ----> BF design ----> Precoding ----> Downlink Tx ----> User decodes their signals
 
-Outputs of different codes:
+***7. Outputs of different codes:***
 
    + Based on function of each code, a code may return EVM, synchornization result, freq. offset, constellation of decoded signal, 
      calibration coefficient, etc.
